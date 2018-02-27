@@ -2,6 +2,7 @@ buildscript {
     ext {
         kotlin_version = '1.2.21'
         tornado_version = '1.7.15'
+        fontawesomefx_version = '8.9'
     }
     repositories {
         mavenCentral()
@@ -20,12 +21,14 @@ apply plugin: 'application'
 mainClassName = "com.azkde.circleart.CircleArtKt"
 
 repositories {
+    jcenter()
     mavenCentral()
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "no.tornado:tornadofx:$tornado_version"
+    compile "de.jensd:fontawesomefx:$fontawesomefx_version"
 }
 
 compileKotlin {
