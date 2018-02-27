@@ -1,31 +1,28 @@
 package com.azkdev.circleart.view
 
-import com.azkdev.circleart.style.MainViewStyles
-import javafx.scene.layout.HBox
+import javafx.geometry.Insets
+import javafx.scene.layout.Background
+import javafx.scene.layout.BackgroundFill
+import javafx.scene.layout.CornerRadii
 import tornadofx.*
 
 class MainView : View() {
 
-    init {
-        importStylesheet(MainViewStyles::class)
-    }
+    override val root = hbox {
+        prefWidth = 560.0
+        prefHeight = 500.0
+        spacing = 10.0
 
-    override val root: HBox = hbox {
-        addClass(MainViewStyles.wrapper)
-
-        vbox {
-            label("a")
-            label("b")
-            label("c")
-            label("d")
+        stackpane {
+            prefWidth = 500.0
+            prefHeight = 500.0
+            background = Background(BackgroundFill(c(51, 51, 51, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
         }
 
-        label("Middle")
-
         vbox {
-            label("1")
-            label("2")
-            label("3")
+            prefWidth = 50.0
+            prefHeight = 500.0
+            background = Background(BackgroundFill(c(51, 51, 51, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
         }
     }
 
