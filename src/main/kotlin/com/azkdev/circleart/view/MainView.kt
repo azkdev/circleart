@@ -11,6 +11,9 @@ import tornadofx.*
 
 class MainView : View() {
 
+    private var offX: Double = 0.0
+    private var offY: Double = 0.0
+
     override val root = hbox {
         setPrefSize(560.0, 500.0)
         spacing = 10.0
@@ -21,13 +24,21 @@ class MainView : View() {
         stackpane {
             prefWidth = 500.0
             prefHeight = 500.0
-            background = Background(BackgroundFill(c(51, 51, 51, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
+            background = Background(BackgroundFill(c(55, 55, 55, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
         }
 
         vbox {
             prefWidth = 50.0
             prefHeight = 500.0
-            background = Background(BackgroundFill(c(51, 51, 51, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
+            setOnMousePressed {
+                offX = primaryStage.x - it.screenX
+                offY = primaryStage.y - it.screenY
+            }
+            setOnMouseDragged {
+                primaryStage.x = it.screenX + offX
+                primaryStage.y = it.screenY + offY
+            }
+            background = Background(BackgroundFill(c(55, 55, 55, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
 
             hbox {
                 setPrefSize(50.0, 20.0)
