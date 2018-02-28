@@ -1,11 +1,7 @@
 package com.azkdev.circleart.view
 
+import com.azkdev.circleart.style.Styles
 import javafx.application.Platform
-import javafx.beans.binding.Bindings.and
-import javafx.geometry.Insets
-import javafx.scene.image.Image
-import javafx.scene.layout.*
-import javafx.scene.paint.Color
 import tornadofx.*
 
 class MainView : View() {
@@ -14,23 +10,14 @@ class MainView : View() {
     private var offY: Double = 0.0
 
     override val root = hbox {
-        setPrefSize(560.0, 500.0)
-        spacing = 10.0
-        style {
-            backgroundColor += Color.TRANSPARENT
-        }
+        addClass(Styles.appwindow)
 
         stackpane {
-            prefWidth = 500.0
-            prefHeight = 500.0
-            background = Background(BackgroundFill(c(255, 255, 255, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
+            addClass(Styles.canvaswindow)
         }
 
         vbox {
-            prefWidth = 50.0
-            prefHeight = 500.0
-            spacing = 20.0
-            background = Background(BackgroundFill(c(255, 255, 255, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
+            addClass(Styles.menuwindow)
 
             setOnMousePressed {
                 offX = primaryStage.x - it.screenX
@@ -43,12 +30,8 @@ class MainView : View() {
             }
 
             stackpane {
-                setPrefSize(50.0, 50.0)
-                
-
-                imageview {
-                    image = Image(resources["/icons/power.png"])
-                }
+                addClass(Styles.menuitem)
+                addClass(Styles.powerbtn)
 
                 setOnMouseClicked {
                     Platform.exit()
@@ -56,35 +39,23 @@ class MainView : View() {
             }
 
             stackpane {
-                setPrefSize(50.0, 50.0)
-
-                imageview {
-                    image = Image(resources["/icons/new.png"])
-                }
+                addClass(Styles.menuitem)
+                addClass(Styles.newbtn)
             }
 
             stackpane {
-                setPrefSize(50.0, 50.0)
-
-                imageview {
-                    image = Image(resources["/icons/play.png"])
-                }
+                addClass(Styles.menuitem)
+                addClass(Styles.playbtn)
             }
 
             stackpane {
-                setPrefSize(50.0, 50.0)
-
-                imageview {
-                    image = Image(resources["/icons/pause.png"])
-                }
+                addClass(Styles.menuitem)
+                addClass(Styles.pausebtn)
             }
 
             stackpane {
-                setPrefSize(50.0, 50.0)
-
-                imageview {
-                    image = Image(resources["/icons/settings.png"])
-                }
+                addClass(Styles.menuitem)
+                addClass(Styles.settingsbtn)
             }
         }
     }
