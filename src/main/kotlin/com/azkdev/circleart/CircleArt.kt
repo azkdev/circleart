@@ -1,5 +1,6 @@
 package com.azkdev.circleart
 
+import com.azkdev.circleart.style.Styles
 import com.azkdev.circleart.view.MainView
 import javafx.application.Application
 import javafx.scene.paint.Color
@@ -7,7 +8,7 @@ import javafx.stage.Stage
 import javafx.stage.StageStyle
 import tornadofx.*
 
-class CircleArt : App(MainView::class) {
+class CircleArt : App(MainView::class, Styles::class) {
 
     override fun start(stage: Stage) {
         stage.isResizable = false
