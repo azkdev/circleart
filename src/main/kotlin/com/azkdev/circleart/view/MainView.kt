@@ -2,11 +2,14 @@ package com.azkdev.circleart.view
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView
+import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon
+import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView
 import javafx.application.Platform
 import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.layout.*
 import javafx.scene.paint.Color
+import javafx.scene.text.FontWeight
 import tornadofx.*
 
 class MainView : View() {
@@ -24,7 +27,7 @@ class MainView : View() {
         stackpane {
             prefWidth = 500.0
             prefHeight = 500.0
-            background = Background(BackgroundFill(c(55, 55, 55, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
+            background = Background(BackgroundFill(c(255, 255, 255, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
         }
 
         vbox {
@@ -38,29 +41,15 @@ class MainView : View() {
                 primaryStage.x = it.screenX + offX
                 primaryStage.y = it.screenY + offY
             }
-            background = Background(BackgroundFill(c(55, 55, 55, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
+            background = Background(BackgroundFill(c(255, 255, 255, 1.0), CornerRadii.EMPTY, Insets.EMPTY))
 
-            hbox {
-                setPrefSize(50.0, 20.0)
-                spacing = 5.0
-                alignment = Pos.CENTER
+            stackpane {
+                setPrefSize(50.0, 50.0)
 
-                label("", FontAwesomeIconView(FontAwesomeIcon.CARET_DOWN).apply {
-                    size = "20px"
+                label("", FontAwesomeIconView(FontAwesomeIcon.POWER_OFF).apply {
+                    size = "40px"
                     style {
-                        fill = c(0, 200, 0, 1.0)
-                    }
-                }) {
-                    setPrefSize(20.0, 20.0)
-                    alignment = Pos.CENTER
-                    setOnMouseClicked {
-                        primaryStage.isMaximized = false
-                    }
-                }
-                label("", FontAwesomeIconView(FontAwesomeIcon.TIMES).apply {
-                    size = "20px"
-                    style {
-                        fill = c(200, 0, 0, 1.0)
+                        fill = c(55, 55, 55, 1.0)
                     }
                 }) {
                     setPrefSize(20.0, 20.0)
