@@ -18,7 +18,7 @@ version '0.1'
 apply plugin: 'kotlin'
 apply plugin: 'application'
 
-mainClassName = "com.azkde.circleart.CircleArtKt"
+mainClassName = "com.azkdev.circleart.CircleArtKt"
 
 repositories {
     jcenter()
