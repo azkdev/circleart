@@ -1,63 +1,27 @@
 package com.azkdev.circleart.view
 
 import com.azkdev.circleart.style.Styles
-import javafx.application.Platform
 import tornadofx.*
 
-class MainView : View() {
-
-    private var offX: Double = 0.0
-    private var offY: Double = 0.0
+class MainView : View("Circles") {
 
     override val root = hbox {
         addClass(Styles.appwindow)
 
         stackpane {
             addClass(Styles.canvaswindow)
-        }
 
-        vbox {
-            addClass(Styles.menuwindow)
+            canvas(500.0, 500.0) {
+                graphicsContext2D.fill = c("#FF0000", 1.0)
 
-            setOnMousePressed {
-                offX = primaryStage.x - it.screenX
-                offY = primaryStage.y - it.screenY
-            }
-
-            setOnMouseDragged {
-                primaryStage.x = it.screenX + offX
-                primaryStage.y = it.screenY + offY
-            }
-
-            stackpane {
-                addClass(Styles.menuitem)
-                addClass(Styles.powerbtn)
-
-                setOnMouseClicked {
-                    Platform.exit()
+                (0..10).forEach {
+                    val r: Double = Math.random() * 100
+                    graphicsContext2D.fillOval(Math.random() * width, Math.random() * height, r, r)
                 }
             }
-
-            stackpane {
-                addClass(Styles.menuitem)
-                addClass(Styles.newbtn)
-            }
-
-            stackpane {
-                addClass(Styles.menuitem)
-                addClass(Styles.playbtn)
-            }
-
-            stackpane {
-                addClass(Styles.menuitem)
-                addClass(Styles.pausebtn)
-            }
-
-            stackpane {
-                addClass(Styles.menuitem)
-                addClass(Styles.settingsbtn)
-            }
         }
+
+        this += MenuView::class
     }
 
 }
