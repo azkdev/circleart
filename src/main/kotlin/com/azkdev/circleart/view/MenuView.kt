@@ -2,10 +2,7 @@ package com.azkdev.circleart.view
 
 import com.azkdev.circleart.style.Styles
 import javafx.application.Platform
-import tornadofx.View
-import tornadofx.addClass
-import tornadofx.stackpane
-import tornadofx.vbox
+import tornadofx.*
 
 class MenuView : View() {
 
@@ -37,6 +34,7 @@ class MenuView : View() {
         stackpane {
             addClass(Styles.menuitem)
             addClass(Styles.newbtn)
+            val newbtn = this
         }
 
         stackpane {

@@ -21,7 +21,7 @@ class Styles : Stylesheet() {
         val transparentc = c("#000000", 0.0)
         val whitec = c("#FFFFFF")
         val redc = c("#D52735")
-        val bluec = c("#028FBF")
+        val bluec = c("#025FBF")
     }
 
     init {
