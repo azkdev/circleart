@@ -8,9 +8,9 @@ import java.net.URI
 class Styles : Stylesheet() {
 
     companion object {
-        val appwindow by cssclass()
-        val canvaswindow by cssclass()
-        val menuwindow by cssclass()
+        val appwnd by cssclass()
+        val canvaswnd by cssclass()
+        val menuwnd by cssclass()
         val menuitem by cssclass()
         val powerbtn by cssclass()
         val newbtn by cssclass()
@@ -20,38 +20,31 @@ class Styles : Stylesheet() {
 
         val transparentc = c("#000000", 0.0)
         val whitec = c("#FFFFFF")
-        val redca = c("#EC4438")
         val redc = c("#D52735")
-        val yellowca = c("#FFD951")
-        val yellowc = c("#F8AE0C")
-        val greenca = c("#67C02D")
-        val greenc = c("#4FA01F")
-        val bluec = c("#1760AA")
-        val blueca = c("#3694D1")
+        val bluec = c("#028FBF")
     }
 
     init {
-        appwindow {
+        appwnd {
             prefWidth = 560.px
-            prefHeight = 500.px
+            prefHeight = 560.px
             spacing = 10.px
             backgroundColor += transparentc
         }
 
-        canvaswindow {
-            prefWidth = 500.px
-            fillHeight = true
-            backgroundColor += whitec
+        canvaswnd {
+            spacing = 10.px
+            backgroundColor += transparentc
         }
 
-        menuwindow {
+        menuwnd {
             prefWidth = 50.px
             spacing = 10.px
             backgroundColor += transparentc
         }
 
         menuitem {
-            fillWidth = true
+            prefWidth = 50.px
             prefHeight = 50.px
             backgroundPosition += BackgroundPosition.CENTER
             backgroundRepeat += Pair(BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT)
@@ -62,39 +55,43 @@ class Styles : Stylesheet() {
             backgroundColor += redc
             backgroundImage += URI.create("/icons/power.png")
             and(hover) {
-                backgroundColor += redca
+                backgroundImage += URI.create("/icons/powerwhite.png")
             }
         }
 
         newbtn {
-            backgroundColor += yellowc
+            backgroundColor += whitec
             backgroundImage += URI.create("/icons/new.png")
             and(hover) {
-                backgroundColor += yellowca
+                backgroundColor += bluec
+                backgroundImage += URI.create("/icons/newwhite.png")
             }
         }
 
         playbtn {
-            backgroundColor += greenc
+            backgroundColor += whitec
             backgroundImage += URI.create("/icons/play.png")
             and(hover) {
-                backgroundColor += greenca
+                backgroundColor += bluec
+                backgroundImage += URI.create("/icons/playwhite.png")
             }
         }
 
         pausebtn {
-            backgroundColor += greenc
+            backgroundColor += whitec
             backgroundImage += URI.create("/icons/pause.png")
             and(hover) {
-                backgroundColor += greenca
+                backgroundColor += bluec
+                backgroundImage += URI.create("/icons/pausewhite.png")
             }
         }
 
         settingsbtn {
-            backgroundColor += bluec
+            backgroundColor += whitec
             backgroundImage += URI.create("/icons/settings.png")
             and(hover) {
-                backgroundColor += blueca
+                backgroundColor += bluec
+                backgroundImage += URI.create("/icons/settingswhite.png")
             }
         }
     }

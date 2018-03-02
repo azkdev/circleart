@@ -13,7 +13,7 @@ class MenuView : View() {
     private var offY: Double = 0.0
 
     override val root = vbox {
-        addClass(Styles.menuwindow)
+        addClass(Styles.menuwnd)
 
         setOnMousePressed {
             offX = primaryStage.x - it.screenX
