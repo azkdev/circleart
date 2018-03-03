@@ -1,5 +1,6 @@
 package com.azkdev.circleart.style
 
+import javafx.scene.Cursor
 import javafx.scene.layout.BackgroundPosition
 import javafx.scene.layout.BackgroundRepeat
 import javafx.scene.text.FontWeight
@@ -23,10 +24,13 @@ class Styles : Stylesheet() {
         val btnclose by cssclass()
 
         val transparentc = c("#000000", 0.0)
-        val backgroundc = c("#343434")
+        val backgroundc = c("#0B1424")
 
         val mainbgc = mixin {
             backgroundColor += backgroundc
+        }
+        val cursorpointer = mixin {
+            cursor = Cursor.HAND
         }
         val topbottbar = mixin {
             prefWidth = 100.pc
@@ -60,26 +64,46 @@ class Styles : Stylesheet() {
         btnnew {
             +menubaritem
             backgroundImage += URI.create("/icons/newwhite.png")
+            and(hover) {
+                +cursorpointer
+                backgroundImage += URI.create("/icons/newyellow.png")
+            }
         }
 
         btnplay {
             +menubaritem
             backgroundImage += URI.create("/icons/playwhite.png")
+            and(hover) {
+                +cursorpointer
+                backgroundImage += URI.create("/icons/playyellow.png")
+            }
         }
 
         btnpause {
             +menubaritem
             backgroundImage += URI.create("/icons/pausewhite.png")
+            and(hover) {
+                +cursorpointer
+                backgroundImage += URI.create("/icons/pauseyellow.png")
+            }
         }
 
         btnsave {
             +menubaritem
             backgroundImage += URI.create("/icons/savewhite.png")
+            and(hover) {
+                +cursorpointer
+                backgroundImage += URI.create("/icons/saveyellow.png")
+            }
         }
 
         btnsettings {
             +menubaritem
             backgroundImage += URI.create("/icons/settingswhite.png")
+            and(hover) {
+                +cursorpointer
+                backgroundImage += URI.create("/icons/settingsyellow.png")
+            }
         }
 
         apptitle {
@@ -91,6 +115,10 @@ class Styles : Stylesheet() {
         btnclose {
             +menubaritem
             backgroundImage += URI.create("/icons/powerwhite.png")
+            and(hover) {
+                +cursorpointer
+                backgroundImage += URI.create("/icons/powerred.png")
+            }
         }
 
         contentarea {
