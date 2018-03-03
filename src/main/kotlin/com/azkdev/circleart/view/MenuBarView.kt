@@ -1,6 +1,7 @@
 package com.azkdev.circleart.view
 
 import com.azkdev.circleart.style.Styles
+import javafx.application.Platform
 import tornadofx.*
 
 class MenuBarView : View() {
@@ -8,7 +9,7 @@ class MenuBarView : View() {
     private var offX: Double = 0.0
     private var offY: Double = 0.0
 
-    override val root = pane {
+    override val root = borderpane {
         addClass(Styles.menubar)
 
         setOnMousePressed {
@@ -21,12 +22,46 @@ class MenuBarView : View() {
             primaryStage.y = it.screenY + offY
         }
 
-        hbox {
-            
+        left {
+            hbox {
+                addClass(Styles.menubaritems)
+
+                pane {
+                    addClass(Styles.btnnew)
+                }
+
+                pane {
+                    addClass(Styles.btnplay)
+                }
+
+                pane {
+                    addClass(Styles.btnpause)
+                }
+
+                pane {
+                    addClass(Styles.btnsave)
+                }
+
+                pane {
+                    addClass(Styles.btnsettings)
+                }
+            }
         }
 
-        pane {
+        center {
+            text("Circles pack art") {
+                addClass(Styles.apptitle)
+            }
+        }
 
+        right {
+            pane {
+                addClass(Styles.btnclose)
+
+                setOnMouseClicked {
+                    Platform.exit()
+                }
+            }
         }
     }
 
