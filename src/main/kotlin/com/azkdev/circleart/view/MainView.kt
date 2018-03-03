@@ -10,13 +10,9 @@ class MainView : View("Circles") {
 
         this += MenuBarView::class
 
-        hbox {
-            addClass(Styles.contentarea)
-        }
+        this += ContentAreaView::class
 
-        hbox {
-            addClass(Styles.outputarea)
-        }
+        this += OutputAreaView::class
     }
 
 }

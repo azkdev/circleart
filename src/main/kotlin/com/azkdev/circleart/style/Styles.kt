@@ -1,5 +1,6 @@
 package com.azkdev.circleart.style
 
+import javafx.geometry.Pos
 import tornadofx.*
 
 class Styles : Stylesheet() {
@@ -17,14 +18,26 @@ class Styles : Stylesheet() {
     init {
         appwnd {
             prefWidth = 900.px
-            prefHeight = 620.px
+            prefHeight = 600.px
             spacing = 10.px
             backgroundColor += transparentc
         }
 
         menubar {
             prefWidth = 100.pc
-            prefHeight = 50.px
+            prefHeight = 40.px
+            backgroundColor += backgroundc
+        }
+
+        contentarea {
+            prefWidth = 100.pc
+            prefHeight = 500.px
+            backgroundColor += backgroundc
+        }
+
+        outputarea {
+            prefWidth = 100.pc
+            prefHeight = 40.px
             backgroundColor += backgroundc
         }
     }

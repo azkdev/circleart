@@ -1,7 +1,6 @@
 package com.azkdev.circleart.view
 
 import com.azkdev.circleart.style.Styles
-import javafx.application.Platform
 import tornadofx.*
 
 class MenuBarView : View() {
@@ -9,7 +8,7 @@ class MenuBarView : View() {
     private var offX: Double = 0.0
     private var offY: Double = 0.0
 
-    override val root = hbox {
+    override val root = pane {
         addClass(Styles.menubar)
 
         setOnMousePressed {
@@ -22,7 +21,13 @@ class MenuBarView : View() {
             primaryStage.y = it.screenY + offY
         }
 
+        hbox {
+            
+        }
 
+        pane {
+
+        }
     }
 
 }
