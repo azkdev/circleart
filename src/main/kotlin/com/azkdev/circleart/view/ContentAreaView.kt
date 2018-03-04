@@ -7,6 +7,8 @@ class ContentAreaView : View() {
 
     override val root = hbox {
         addClass(Styles.contentarea)
+
+        this += RecentScketchesView::class
     }
 
 }
