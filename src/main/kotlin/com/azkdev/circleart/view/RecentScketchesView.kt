@@ -4,9 +4,14 @@ import tornadofx.*
 
 class RecentScketchesView : View() {
 
-    val someData = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+    private var someData = listOf<String>()
 
-    override val root = datagrid(someData) {
+    private fun genList(): List<String> {
+        (0..20).forEach { someData += "$it" }
+        return someData
+    }
+
+    override val root = datagrid(genList()) {
         horizontalCellSpacing = 5.0
         verticalCellSpacing = 5.0
     }
