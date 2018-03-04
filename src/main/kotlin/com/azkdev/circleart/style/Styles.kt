@@ -22,6 +22,7 @@ class Styles : Stylesheet() {
         val btnsettings by cssclass()
         val apptitle by cssclass()
         val btnclose by cssclass()
+        val outputtext by cssclass()
 
         val transparentc = c("#000000", 0.0)
         val backgroundc = c("#0B1424")
@@ -130,6 +131,12 @@ class Styles : Stylesheet() {
         outputarea {
             +topbottbar
             +mainbgc
+        }
+
+        outputtext {
+            fontSize = 14.px
+            fontWeight = FontWeight.MEDIUM
+            fill = c("#FFFFFF")
         }
     }
 
